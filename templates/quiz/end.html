@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fin du Quiz</title>
+    <link rel="stylesheet" href="{% static 'end.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>"Félicitations, vous avez terminé le quiz"</h2>
+
+        <!-- Affichage du trophée en fonction du score -->
+        
+        <div class="trophy-container"> 
+            <!-- <div class="background-image" id="background1"></div> 
+            <div class="background-image" id="background2"></div>     -->
+            <img src="{% static 'images/trophee_Emogie/etoile.jpg' %}" alt="Trophée en or">
+            <!-- <img src="{% static 'images/trophee_Emogie/noetoile.jpg' %}" alt="Trophée en or"> -->
+            <div class="trophy">
+                {% if trophée == 'or' %}
+                    <img src="{% static 'images/trophee_Emogie/gold.jpeg' %}" alt="Trophée en or">
+                {% elif trophée == 'argent' %}
+                    <img src="{% static 'images/trophee_Emogie/silver.jpeg' %}" alt="Trophée en argent">
+                {% elif trophée == 'bronze' %}
+                    <img src="{% static 'images/trophee_Emogie/bronze.jpeg' %}" alt="Trophée en bronze">
+                {% else %}
+                    <img src="{% static 'images/trophee_Emogie/emogie.jpg' %}" alt="Pas de trophée">
+                {% endif %}
+            </div>
+        </div>
+        <p class="status">
+            {% if trophée == 'or' %}
+                Expert des poissons de Guadeloupe
+            {% elif trophée == 'argent' %}
+                Pas loin d'être un expert 
+            {% elif trophée == 'bronze' %}
+                En route pour être un expert !
+            {% else %}
+                Vous pouvez faire mieux ! Relancez le jeu et montrez de quoi vous êtes capables!
+            {% endif %}
+        </p>
+
+        <!-- Section Total des points -->
+        <div class="score-box single-box">
+            <div class="icon-text">
+                <span class="icon">🟡</span>
+                <span class="score-value">{{ score_final }}</span>
+            </div>
+            <span class="score-label">Total des points</span>
+        </div>
+
+        <!-- Section Durée et Bonnes réponses côte à côte avec espacement -->
+        <div class="score-row">
+            <div class="score-box">
+                <div class="icon-text">
+                    <span class="icon">⏰</span>
+                    <span class="score-value" id="total-elapsed-time">120 sec</span>
+                </div>
+                <span class="score-label">Durée</span>
+            </div>
+            
+            <div class="score-box">
+                <div class="icon-text">
+                    <img src="{% static 'images/trophee_Emogie/valider.png' %}" alt="Validation" class="icon">
+                    <span class="score-value">{{ score }}/6</span>
+                </div>
+                <span class="score-label">Bonnes réponses</span>
+            </div>
+        </div>
+
+        <!-- Boutons d'action -->
+        <div class="buttons">
+            <a href="{% url 'index' %}" class="btn replay">
+                <i class="fas fa-redo button-icon"></i>
+                Rejouer
+            </a>
+            
+            <a href="#" class="btn share">
+                <i class="fas fa-share button-icon"></i>
+                Partager
+            </a>
+        </div>
+        
+    </div>
+</body>
+</html>

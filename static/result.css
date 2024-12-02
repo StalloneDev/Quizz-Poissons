@@ -1,0 +1,209 @@
+/* Style général du body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+    margin: 0;
+    text-align: center;
+    color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+/* Container principal */
+.container {
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px; /* Limite la largeur maximale */
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+    overflow: hidden;
+    box-sizing: border-box; /* S'assure que le padding est inclus dans la largeur */
+}
+
+/* Conteneur de l'image circulaire */
+.image-container {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 20px;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Style du bouton */
+.btn {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    width: 30%;
+    margin-top: -5px;
+    box-sizing: border-box;
+}
+
+.btn:hover {
+    background-color: #218838;
+}
+
+/* Header du résultat */
+.result-header {
+    color: #23C686;
+    font-weight: bold;
+}
+
+.result-header.incorrect {
+    color: red; /* Message en rouge pour mauvaise réponse */
+}
+
+/* Liste des faits */
+.fact-container ul {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.fact-container li {
+    margin: 10px 0;
+    color: #000;
+}
+
+
+
+.fact h4 {
+    color: #1C58F2;
+}
+
+.fact {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #0060FF1A;
+    color: #333;
+    border-radius: 10px;
+    margin-left: 60px;
+    width: 250px;
+}
+
+/* Liste des faits */
+.fact-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.fact-item {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+    text-align: center;
+}
+
+.fact-item::before {
+    
+    color: #2196F3;
+    position: absolute;
+    left: 5px;
+    font-size: 1.2em;
+}
+
+/* MEDIA QUERIES POUR LA RESPONSIVITÉ */
+
+/* Pour les petits écrans (mobiles) */
+@media (max-width: 480px) {
+    .btn {
+        width: 70%; /* Bouton plus large sur mobile */
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .fact {
+        margin-left: -80px; /* Supprimer le décalage pour les petits écrans */
+        width: 80%;
+    }
+
+    .image-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    .result-header {
+        font-size: 16px;
+    }
+
+    /* La largeur des faits peut aussi être ajustée pour les petits écrans */
+    .fact-container {
+        width: 100%;
+    }
+
+    .fact-container ul {
+        font-size: 14px;
+    }
+}
+
+/* Pour les tablettes (écrans moyens) */
+@media (max-width: 768px) {
+    .btn {
+        width: 50%; /* Bouton plus large sur tablettes */
+        font-size: 18px;
+    }
+
+    .container {
+        border-radius: 10px;
+        width: 100%;
+        max-width: 500px; /* Limite la largeur maximale */
+        padding: 10px;
+        background-color: #fff;
+        text-align: center !important;
+        justify-content: center;
+        overflow: hidden;
+        box-sizing: border-box; /* S'assure que le padding est inclus dans la largeur */
+    }
+
+    .fact {
+        margin-left: 40px; /* Un léger décalage */
+        width: 80%;
+    }
+
+    .image-container {
+        width: 110px;
+        height: 110px;
+    }
+ 
+}
+
+/* Pour les grands écrans (ordinateurs de bureau) */
+@media (min-width: 1024px) {
+    .container {
+        width: 500px;
+    }
+
+    .image-container {
+        width: 120px;
+        height: 120px;
+    }
+
+    .fact {
+        margin-left: 40px; /* Un léger décalage */
+        width: 80%;
+    }
+}

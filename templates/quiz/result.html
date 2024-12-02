@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultats du Quiz</title>
+    <link rel="stylesheet" href="{% static 'result.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="result-container">
+            {% if attempt_left  > 0 and not correct %}
+                <div id="emoji-result" class="result-item fade-in">
+                    <div class="outer-circle">
+                        <div class="image-container">
+                            <img src="{% static 'images/trophee_Emogie/lost1.jpeg' %}" alt="Emoji content" class="result-icon">
+                        </div>
+                    </div>
+                    
+                    <div class="result-header attempt-message">
+                        <p style="color:blue;font-weight:bold;font-size:20px;">"Mauvaise réponse !" <br> Il ne vous reste plus qu'un essai.</p>
+                    </div>
+                    <a href="{% url 'question' question.id %}" class="btn retry"style="color:white;background:#BC0229;font-weight:bold;border-radius:100px">FERMER</a>
+                </div>
+            {% elif correct %}
+                <!-- Affichage du résultat correct -->
+                <div id="poisson-image" class="result-item fade-in">
+                    <div class="outer-circle">
+                        <div class="image-container">
+                            <img src="{% static 'images/'|add:question.correct %}" alt="{{ question.correct }}">
+                        </div>
+                    </div>
+                    
+                    <div class="result-header correct">
+                        <p>Bravo, vous avez trouvé </p>
+                        <p>{{ question.info.nom }} !</p>
+                    </div>
+                </div>
+            {% else %}
+                <!-- Affichage du message d'échec après la deuxième tentative -->
+                <div id="emoji-result" class="result-item fade-in">
+                    <div class="outer-circle">
+                        <div class="image-container">
+                            <img src="{% static 'images/'|add:question.correct %}" alt="Emoji content" class="result-icon">
+                        </div>
+                    </div>
+                    
+                    <div class="result-header incorrect">
+                        <p>Dommage, ce n'est pas la bonne réponse, c'est plutôt le </p>
+                        <p>{{ question.info.nom }} !</p>
+                    </div>
+                </div>
+            {% endif %}
+            
+            {% if correct or attempt_left == 0 %}
+                <div class="fact">
+                    <h4>Bon à Savoir</h4>
+                </div>
+
+                <div class="fact-container">
+                    <ul class="fact-list">
+                        <!-- <li class="fact-item"><strong>Habitat :</strong> {{ question.info.habitat }}</li> -->
+                        <li class="fact-item"><strong></strong> {{ question.info.description }}</li>
+                        <!-- <li class="fact-item"><strong>Habitudes :</strong> {{ question.info.habitudes }}</li> -->
+                    </ul>
+                </div>
+            {% endif %}
+
+            {% if correct and attempt_left > 0 %}
+                {% if next_question %}
+                    <a href="{% url 'question' next_question %}" class="btn">SUIVANT</a>
+                {% else %}
+                    <a href="{% url 'end_quiz' score next_question %}" class="btn">Fin du Quiz</a>
+                    <button onclick="window.location.href='/'" class="btn">Rejouer</button>  
+                {% endif %}
+            {% elif attempt_left == 0 %}
+                {% if next_question %}
+                    <a href="{% url 'question' next_question %}" class="btn">SUIVANT</a>
+                {% else %}
+                    <a href="{% url 'end_quiz' score next_question %}" class="btn">Fin du Quiz</a>
+                    <button onclick="window.location.href='/'" class="btn">Rejouer</button>  
+                {% endif %}
+            {% endif %}
+        
+        
+        </div>
+    </div>
+
+    <!-- <script src="{% static 'js/timer.js' %}"></script> -->
+</body>
+</html>

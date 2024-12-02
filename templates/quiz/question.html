@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question {{ question.id }}</title>
+    <link rel="stylesheet" href="{% static 'question.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="background-image">
+        <img src="{% static 'images/fond.webp' %}" alt="Background">
+    </div>
+
+    <div class="container">
+        <div id="game-container" data-current-question="{{ question.id }}">
+            <!-- Rest of the content -->
+        </div>
+        
+        <div id="timeout-popup" class="popup" data-question-id="{{ question.id }}" data-next-question-id="{{ next_question_id }}">
+            <img src="{% static 'images/clock1.png' %}" alt="Temps écoulé" id="popup-image">
+            <p id="popup-message-1" style="display: none;">Temps écoulé ! Il ne vous reste plus qu'un essai.</p>
+            <p id="popup-message-2" style="display: none;">Temps écoulé ! Veuillez cliquer sur le bouton fermer pour continuer.</p>
+            <button id="popup-close-btn" class="btn retry" style="color:white;font-weight:bold;border-radius:15px">FERMER</button>
+        </div>
+
+        <div class="header-section">
+            <div id="score">
+            <span id="current-score">{{ question.id }}</span>/7
+            </div>
+            
+            <div id="timer">
+                <svg>
+                    <circle r="18" cx="20" cy="20"></circle>
+                </svg>
+                <span id="time-remaining">15</span>
+            </div>
+            
+        </div>
+        
+        <div class="question-title">
+            <h3>{{ question.question }}</h3>
+        </div>
+        <br><br>
+        <form action="{% url 'result' question.id %}" method="post" id="question-form">
+            {% csrf_token %}
+            <div class="question-container">
+                {% for option in question.options %}
+                
+                <div class="option-container" data-option="{{ option }}" onclick="selectOption(this)">
+                    <div class="option-title">
+                        <h3>{{ option }}</h3>
+                    </div>
+                    <img src="{% static 'images/'|add:option %}" alt="{{ option }}">
+                </div>
+                {% endfor %}
+            </div>
+            
+            <input type="hidden" name="selected_option" id="selected-option" value="">
+            <!-- <button type="submit" class="btn">Valider</button> -->
+            <button id="submit-btn" type="submit" class="btn">Valider</button><br>
+                        
+        </form>
+        <a href="{% url 'index' %}" class="btn restart">
+            <img src="{% static 'images/restart.jpg' %}" alt="Restart">
+        </a>
+    </div>
+
+    <script src="{% static 'js/question.js' %}"></script>
+</body>
+</html>
+

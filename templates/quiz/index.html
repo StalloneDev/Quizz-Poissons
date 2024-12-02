@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizz Nature Poissons</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>Quizz Nature Poissons de la Guadeloupe</h2>
+        
+        <div class="outer-circle">
+            <!-- <div class="image-container">
+                <img src="{% static 'images/poissons.jpg' %}" alt="poisons">
+            </div> -->
+            <div class="video-container">
+                <video autoplay loop muted>
+                    <source src="{% static 'images/poissonV2.webm' %}" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        
+
+        <p>"Apprenez à identifier les poissons emblématiques de la Guadeloupe et découvrez leur rôle écologique grâce à ce quizz visuel."</p>
+
+        <div class="bar"></div>
+
+        <a href="{% url 'question' 1 %}" class="start-button">Commencer</a>
+
+    </div>
+</body>
+</html>
