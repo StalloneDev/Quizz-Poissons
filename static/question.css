@@ -313,7 +313,7 @@ h3 {
         padding: 10px;
     } */
     .popup {
-        margin-left: -27px;
+        margin-left: -8px;
     }
 
     #score, #timer {
@@ -345,7 +345,7 @@ h3 {
 
     button.btn {
         font-size: 1rem;
-        margin-right: 50px;
+        margin-right: 25px;
     }
 
     .restart {
