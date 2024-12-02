@@ -18,8 +18,8 @@ DEBUG = True
 
 # ALLOWED_HOSTS = ['quizz-poissons.srv653590.hstgr.cloud', 'localhost', '127.0.0.1', '*']
 
-# ALLOWED_HOSTS = ["jeux-poissons.onrender.com"]
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["quizz-poissons.onrender.com"]
+# ALLOWED_HOSTS = []
 
 # Application definition
 
