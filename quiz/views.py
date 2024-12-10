@@ -6,10 +6,10 @@ questions = [
     {
         'id': 1,
         'question': "Quel poisson anime les récifs dès 3 m de profondeur ?",
-        'options': ['Chirigurien.jpg', 'Coffre-Mouton.jpg', 'Pyjama.jpg', 'Pastenagues.jpg'],
-        'correct': 'Chirigurien.jpg',
+        'options': ['Chirurgien.jpg', 'Coffre-Mouton.jpg', 'Pyjama.jpg', 'Pastenagues.jpg'],
+        'correct': 'Chirurgien.jpg',
         'info': {
-            'nom': "Chirugien Bleu",
+            'nom': "Chirurgien Bleu",
             'description': "Au stade juvénile, il est entièrement jaune vif. Une forme intermédiaire adopte déjà la couleur bleue sur tout le corps, mais conserve la nageoire caudale jaune. Les adultes sont entièrement bleus."
         }
     },
@@ -26,7 +26,7 @@ questions = [
     {
         'id': 3,
         'question': "Quel poisson se nourrit de coraux et vit en couple ?",
-        'options': ['Pyjama.jpg', 'Chirigurien.jpg', 'Coffre-Mouton.jpg', 'Fee-Lorette.jpg'],
+        'options': ['Pyjama.jpg', 'Chirurgien.jpg', 'Coffre-Mouton.jpg', 'Fee-Lorette.jpg'],
         'correct': 'Pyjama.jpg',
         'info': {
             'nom': "Papillon Pyjama",
@@ -59,7 +59,7 @@ questions = [
     {
         'id': 6,
         'question': "Quel petit poisson est souvent caché dans les anfractuosités des récifs coralliens et ne sort qu’à la nuit tombée ?",
-        'options': ['Cardinal-Longues-Epines.jpg', 'Chirigurien.jpg', 'Baracuda.jpg', 'Coffre-Mouton.jpg'],
+        'options': ['Cardinal-Longues-Epines.jpg', 'Chirurgien.jpg', 'Baracuda.jpg', 'Coffre-Mouton.jpg'],
         'correct': 'Cardinal-Longues-Epines.jpg',
         'info': {
             'nom': "Cardinal Longue Epine",
@@ -70,7 +70,7 @@ questions = [
     {
         'id': 6,
         'question': "Quel petit poisson est souvent caché dans les anfractuosités des récifs coralliens et ne sort qu’à la nuit tombée ?",
-        'options': ['Cardinal-Longues-Epines.jpg', 'Chirigurien.jpg', 'Baracuda.jpg', 'Coffre-Mouton.jpg'],
+        'options': ['Cardinal-Longues-Epines.jpg', 'Chirurgien.jpg', 'Baracuda.jpg', 'Coffre-Mouton.jpg'],
         'correct': 'Cardinal-Longues-Epines.jpg',
         'info': {
             'nom': "Cardinal Longue Epine",
