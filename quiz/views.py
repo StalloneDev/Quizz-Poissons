@@ -49,7 +49,7 @@ questions = [
     {
         'id': 5,
         'question': "Quel prédateur a des dents acérées et peut atteindre 1,20 m de longueur ?",
-        'options': ['Pastenagues.jpg', 'Thazard-Maquereau.jpg', 'Baracuda.jpg', 'Coffre-Mouton.jpg'],
+        'options': ['Pastenagues.jpg', 'Thazard-Maquereau.jpg', 'Pyjama.jpg', 'Coffre-Mouton.jpg'],
         'correct': 'Thazard-Maquereau.jpg',
         'info': {
             'nom': "Thazard Maquereau",
